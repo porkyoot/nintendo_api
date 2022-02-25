@@ -103,7 +103,6 @@ def login(ver =A_VERSION):
 
     print("\nMake sure you have fully read the \"Cookie generation\" section of the readme before proceeding. To manually input a cookie instead, enter \"skip\" at the prompt below.")
     print("\nNavigate to this URL in your browser:")
-    print(post_login)
     webbrowser.open(post_login)
     print("Log in, right click the \"Select this account\" button, copy the link address, and paste it below:")
     try:
@@ -320,7 +319,7 @@ def get_cookie(webservice_token, game, userLang) :
     # get cookie
     try:
         app_head = {
-            'Host':                    parsed_url['netloc'],
+            'Host':                    parsed_url.netloc,
             'X-IsAppAnalyticsOptedIn': 'false',
             'Accept':                  'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Encoding':         'gzip,deflate',
